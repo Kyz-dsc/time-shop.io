@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kly Shop</title>
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Kly Shop">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1327390172173570138/1327396805989896282/4d6f2ac02784e0100ed29450b6f9ab4a.png?ex=678392dc&is=6782415c&hm=9ccedd0b7efdb7d826515b31a77ac4d20afb357411546a21a495d77bf4beeef3&">
+    <meta property="og:description" content="Explorez notre magasin et découvrez des produits uniques.">
+    <meta property="og:url" content="https://votre-url.com">
+    <title>Kly Shop</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #5e288a;
+            color: #333;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        /* Banner Section */
+        .banner {
+            width: 100%; /* Largeur de la bannière */
+            height: 300px; /* Hauteur de la bannière */
+            background-image: url('https://cdn.discordapp.com/attachments/1325484350409805837/1327399314321965116/eara.png?ex=6782ec72&is=67819af2&hm=e3b7684e79614f10574f16749a36d250c2f06fcf739681d9c1233b6bf8c5e67e&'); /* Image de fond de la bannière */
+            background-size: cover; /* Recouvre l'espace avec l'image */
+            background-position: center; /* Centre l'image */
+            border-radius: 12px; /* Coins arrondis */
+            position: relative; /* Nécessaire pour positionner le profil à l'intérieur */
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            align-items: center; /* Centre verticalement */
+        }
+
+        .banner h1 {
+            color: white;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Profile Section (Right Side) */
+        .profile {
+            background-color: rgba(31, 12, 44, 0.8); /* Fond semi-transparent */
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(93, 11, 117, 0.1);
+        }
+        .profile h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        /* Beautiful Buttons */
+        .social-links a {
+            margin: 0 15px;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            background-color: #6b1c51;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #fff;
+            color: #6b1c51;
+            transform: translateY(-5px);
+        }
+
+        /* Category Section */
+        .category-section {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .category-section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            background-color: #4f1355;
+            color: white;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            width: 30%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile, .category-section, .banner {
+                width: 100%;
+            }
+
+            .category-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <!-- Profile Section (Right Side) -->
+        <div class="profile">
+            <img src="https://cdn.discordapp.com/attachments/1303817807539994638/1327357000908148826/4a27587949be92ece193b7a8331f96c8.gif?ex=6782c50a&is=6781738a&hm=9b7c34fc005ece6d791b89896a615e7b8808ea46469624d34d6bbb8bef9338f2&" alt="Profile Picture">
+            <h2>Meki Graph</h2>
+            <div class="social-links">
+                <a href="https://discord.com/users/924406299939180575" target="_blank">
+                    Discord Profile
+                </a>
+                <a href="https://discord.gg/r472EHBF2w" target="_blank">
+                    Discord Server
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Category Section -->
+    <div class="category-section">
+        <h2>Header</h2>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1327390172173570138/1327396805989896282/4d6f2ac02784e0100ed29450b6f9ab4a.png?ex=6782ea1c&is=6781989c&hm=9dedd8f1602bb49d21dfa49b6181dc363a5f091a7273089e38ebfd13d73997cf&" alt="Bannière 1">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1327390172173570138/1327396824780247050/VIG_1.png?ex=6782ea20&is=678198a0&hm=09f13236100edf078fc5c4170298debc6dc9000b5ecda1a443369945b0882f80&" alt="Bannière 2">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1327390172173570138/1327396840584249344/vigueurrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.png?ex=6782ea24&is=678198a4&hm=e723f5ea65c9265517f3f1623c40170aa0a5751f11e13343d5274098ea8f1ed1&" alt="Bannière 3">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399313609068604/vonche.png?ex=6782ec72&is=67819af2&hm=259373d995ca00ab510162ddf3f90ef235f577697149e27477b4bf3bc0166ed5&" alt="Bannière 4">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399314321965116/eara.png?ex=6782ec72&is=67819af2&hm=e3b7684e79614f10574f16749a36d250c2f06fcf739681d9c1233b6bf8c5e67e&" alt="Bannière 5">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399315085332510/eeeeeeeeee.jpg?ex=6782ec72&is=67819af2&hm=5f2f3098b2c5eea9c6ff222ba299fd7f43d0bad24472284b52289e408b0e382b&" alt="Bannière 6">
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Category Section -->
+    <div class="category-section">
+        <h2>Affiche</h2>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399386845679707/affiche-bugatti-divo.png?ex=6782ec83&is=67819b03&hm=4baf69a326891920b6053b4e881d06661fb3a9bdd36e0f8f855aba534565b2b0&" alt="Produit 1">
+                <p>Produit 1</p>
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399387542061056/nocta-affiche.png?ex=6782ec83&is=67819b03&hm=b44daafebeb36d832a8b721073ca0e9e8a727fcd82494476b2017bf9f9ea8b8b&" alt="Produit 2">
+                <p>Produit 2</p>
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399388691042444/tarrifier-affiche.png?ex=6782ec84&is=67819b04&hm=a1369d29be69561e76c905f0a4c30b60a54caf4435eec7f132dcb1e6b040f2d6&" alt="Produit 3">
+                <p>Produit 3</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Miniatures</h2>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399528093061160/amongus.png?ex=6782eca5&is=67819b25&hm=8bb164d74d2cabec9cbdfbbada82ffec5a966bfbe7448dd6d2b641f4ac306584&" alt="Miniatures">
+                <p>Produit 1</p>
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399528558624931/costa_omen.png?ex=6782eca5&is=67819b25&hm=7b1544d7b913cbc24931d93a4af2d03ce14fbed9db6f7d3fb2a9724fa7f20bbe&" alt="Miniatures">
+                <p>Produit 2</p>
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399529166671944/fermito.png?ex=6782eca5&is=67819b25&hm=0affd949949c6dd9b5c087520237f582bb58b08ef84ee0189780b6dc078a5cb5&" alt="Miniatures">
+                <p>Produit 3</p>
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399529951268894/soryo.png?ex=6782eca5&is=67819b25&hm=d31077c3bd25252ca3bf7183aa43836753d26d3805226116a4b24e4fc99553b7&" alt="Miniatures">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399530710171743/zepeck.png?ex=6782eca6&is=67819b26&hm=7caeb25f2e674295d9083e87bb043c3b1b260fbfcf269266e2c657217aa10eaa&" alt="Miniatures">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399535009468517/miniacree.png?ex=6782eca7&is=67819b27&hm=1319387081ed669ac93f094d627918d5d6aea516dd28e260bab67f657759e3dc&" alt="Miniatures">
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Poster</h2>
+        <div class="category-container">
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399471692255312/affiche-travis-2.png?ex=6782ec97&is=67819b17&hm=af3b02dc56d2fc81ce983ea5e3442dc1973d74a859a4dcd4c6cd8ecddee8cece&" alt="Poster">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399475420860508/affiche-travisq.png?ex=6782ec98&is=67819b18&hm=7a899e864aa70ee7960affd7b9994a3cd97e86443c710fdbd21f3fa64387c957&" alt="Poster">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399477270806548/poster-eminem.png?ex=6782ec99&is=67819b19&hm=3c0a28c03d040b00baec2bed653a62334d5cb3b0266559f6f143c64a1074398d&" alt="Poster">
+            </div>
+            <div class="category-item">
+                <img src="https://cdn.discordapp.com/attachments/1325484350409805837/1327399478646407219/poster-luther.png?ex=6782ec99&is=67819b19&hm=1f7ccb121e2fd93be730e059b20999d3a560a1066477584f6da446874e781c25&" alt="Poster">
+            </div>
+        </div>
+    </div>
+ <!-- Lightbox -->
+ <div class="lightbox" id="lightbox">
+    <button class="close" onclick="closeLightbox()">X</button>
+    <img id="lightboxImage" src="" alt="Large image">
+</div>
+
+<script>
+    // Fonction pour ouvrir l'image en grand dans la lightbox
+    const images = document.querySelectorAll('.category-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = image.src;
+        });
+    });
+
+    // Fonction pour fermer la lightbox
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+    }
+
+    // Fermer la lightbox si l'utilisateur clique en dehors de l'image
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+</script>
+
+</body>
+</html>
